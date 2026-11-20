@@ -1,0 +1,12 @@
+services:
+  claude:
+    image: myself/claude:1.0
+    user: claudia
+    working_dir: /home/claudia/work
+    entrypoint: claude
+    env_file:
+      - .env
+    build:
+      target: claude
+    # volumes:
+    #   - ~/NextCloud/DevSpace/claudeContainer/settings.json:/home/claudia/.claude/settings.json
