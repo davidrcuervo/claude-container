@@ -11,9 +11,9 @@ DOCKER_COMPOSE_FILE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/docker-compos
 
 # echo "Running Docker container..."
 docker compose -f "$DOCKER_COMPOSE_FILE" run -it \
+--volume "$(pwd)":/home/claudia/work \
+--volume "$(pwd)/.claude_config":/home/claudia/.claude \
 --rm claude
-# --volume "$(pwd)":/home/claudia/work \
-# --volume "$(pwd)/.claude_config":/home/claudia/.claude \
 
 # # When docker compose returns (utility finished), the EXIT trap runs cleanup.
 echo "Container finished; listener will be closed."

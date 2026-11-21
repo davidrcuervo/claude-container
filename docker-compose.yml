@@ -8,5 +8,5 @@ services:
       - .env
     build:
       target: claude
-    # volumes:
-    #   - ~/NextCloud/DevSpace/claudeContainer/settings.json:/home/claudia/.claude/settings.json
+    volumes:
+      - ./settings.json:/home/claudia/.claude/settings.json
